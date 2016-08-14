@@ -27,7 +27,6 @@
         <div class="container" id="Container">
             <?php for ($i=1; $i < 4; $i++) { ?>
                 <div class="row">
-
                     <div class="col-sm-3 mix category-1">
                         <img class="img-responsive" src="http://placehold.it/600x400/13c2e8/fff/" alt="" />
                     </div>
@@ -44,7 +43,30 @@
             <?php } ?>
 
         </div>
+        <div class="container">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </main>
+
 </section>
 
 <?php include 'assets/inc/footer.php'; ?>
