@@ -379,93 +379,93 @@
         </section>
 
         <!-- Testimonials Start -->
-                <section class="testimonials padding-sections" id="testimonials">
-                    <!-- Section title -->
-                    <h2 class="text-center">
-                        what people say
-                    </h2>
+        <section class="testimonials padding-sections" id="testimonials">
+            <!-- Section title -->
+            <h2 class="text-center">
+                what people say
+            </h2>
 
-                    <div class="testimonial-container clearfix">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
+            <div class="testimonial-container clearfix">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <!-- Testimonial Box -->
-                                    <div class="col-md-12">
-                                        <div class="test-box">
-                                            <div class="col-xs-4">
-                                                <div class="testi-img">
-                                                    <img class="img-responsive img-circle" src="assets/images/admin.jpg" alt="...">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-8">
-                                                <p><i class="fa fa-quote-left"></i>
-                                                    Qui detraxit sensibus theophrastus eu, at vis elit duis vocent, erant volutpat argumentum ne per. Ad inani nihil his, mea no corpora maiestatis.
-                                                <i class="fa fa-quote-right"></i>
-                                                 </p>
-                                                <h3>Tylor tomas</h3>
-                                                <h5>Project Manger</h5>
-                                            </div>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <!-- Testimonial Box -->
+                            <div class="col-md-12">
+                                <div class="test-box">
+                                    <div class="col-xs-4">
+                                        <div class="testi-img">
+                                            <img class="img-responsive img-circle" src="assets/images/admin.jpg" alt="...">
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="item">
-                                    <!-- Testimonial Box -->
-                                    <div class="col-md-12">
-                                        <div class="test-box">
-                                            <div class="col-xs-4">
-                                                <div class="testi-img">
-                                                    <img class="img-responsive img-circle" src="assets/images/admin.jpg" alt="...">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-8">
-                                                <p><i class="fa fa-quote-left"></i>
-                                                    Qui detraxit sensibus theophrastus eu, at vis elit duis vocent, erant volutpat argumentum ne per. Ad inani nihil his, mea no corpora maiestatis.
-                                                <i class="fa fa-quote-right"></i>
-                                                 </p>
-                                                <h3>Tylor tomas</h3>
-                                                <h5>SEO Foundation</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <!-- Testimonial Box -->
-                                    <div class="col-md-12">
-                                        <div class="test-box">
-                                            <div class="col-xs-4">
-                                                <div class="testi-img">
-                                                    <img class="img-responsive img-circle" src="assets/images/admin.jpg" alt="...">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-8">
-                                                <p><i class="fa fa-quote-left"></i>
-                                                    Qui detraxit sensibus theophrastus eu, at vis elit duis vocent, erant volutpat argumentum ne per. Ad inani nihil his, mea no corpora maiestatis.
-                                                <i class="fa fa-quote-right"></i>
-                                                 </p>
-                                                <h3>Tylor tomas</h3>
-                                                <h5>SEO Foundation</h5>
-                                            </div>
-                                        </div>
+                                    <div class="col-xs-8">
+                                        <p><i class="fa fa-quote-left"></i>
+                                            Qui detraxit sensibus theophrastus eu, at vis elit duis vocent, erant volutpat argumentum ne per. Ad inani nihil his, mea no corpora maiestatis.
+                                        <i class="fa fa-quote-right"></i>
+                                         </p>
+                                        <h3>Tylor tomas</h3>
+                                        <h5>Project Manger</h5>
                                     </div>
                                 </div>
                             </div>
-                        </div> <!-- Carousel End -->
-                    </div><!-- Testi Container End -->
-                </section>
-                <!-- Testimonials End -->
+                        </div>
+
+                        <div class="item">
+                            <!-- Testimonial Box -->
+                            <div class="col-md-12">
+                                <div class="test-box">
+                                    <div class="col-xs-4">
+                                        <div class="testi-img">
+                                            <img class="img-responsive img-circle" src="assets/images/admin.jpg" alt="...">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-8">
+                                        <p><i class="fa fa-quote-left"></i>
+                                            Qui detraxit sensibus theophrastus eu, at vis elit duis vocent, erant volutpat argumentum ne per. Ad inani nihil his, mea no corpora maiestatis.
+                                        <i class="fa fa-quote-right"></i>
+                                         </p>
+                                        <h3>Tylor tomas</h3>
+                                        <h5>SEO Foundation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <!-- Testimonial Box -->
+                            <div class="col-md-12">
+                                <div class="test-box">
+                                    <div class="col-xs-4">
+                                        <div class="testi-img">
+                                            <img class="img-responsive img-circle" src="assets/images/admin.jpg" alt="...">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-8">
+                                        <p><i class="fa fa-quote-left"></i>
+                                            Qui detraxit sensibus theophrastus eu, at vis elit duis vocent, erant volutpat argumentum ne per. Ad inani nihil his, mea no corpora maiestatis.
+                                        <i class="fa fa-quote-right"></i>
+                                         </p>
+                                        <h3>Tylor tomas</h3>
+                                        <h5>SEO Foundation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Carousel End -->
+            </div><!-- Testi Container End -->
+        </section>
+        <!-- Testimonials End -->
 
 
 
