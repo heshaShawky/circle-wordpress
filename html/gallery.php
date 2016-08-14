@@ -8,30 +8,43 @@
     </div>
 </section>
 
-
-<div class="panel with-nav-tabs panel-default">
-    <div class="panel-heading">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab1default" data-toggle="tab">Default 1</a></li>
-                <li><a href="#tab2default" data-toggle="tab">Default 2</a></li>
-                <li><a href="#tab3default" data-toggle="tab">Default 3</a></li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#tab4default" data-toggle="tab">Default 4</a></li>
-                        <li><a href="#tab5default" data-toggle="tab">Default 5</a></li>
-                    </ul>
+<section id="container">
+    <header class="filter-gallery">
+        <div class="container-fluid">
+            <ul class="list-inline list-unstyled">
+                <li class="selected filter" data-filter="all">All</li>
+                <li class="filter" data-filter=".category-1">
+                    cat1
+                </li>
+                <li class="filter" data-filter=".category-2">
+                    cat2
                 </li>
             </ul>
-    </div>
-    <div class="panel-body">
-        <div class="tab-content">
-            <div class="tab-pane fade in active" id="tab1default">Default 1</div>
-            <div class="tab-pane fade" id="tab2default">Default 2</div>
-            <div class="tab-pane fade" id="tab3default">Default 3</div>
-            <div class="tab-pane fade" id="tab4default">Default 4</div>
-            <div class="tab-pane fade" id="tab5default">Default 5</div>
         </div>
-    </div>
-</div>
+    </header>
+
+    <main class="gallery">
+        <div class="container" id="Container">
+            <?php for ($i=1; $i < 4; $i++) { ?>
+                <div class="row">
+
+                    <div class="col-sm-3 mix category-1">
+                        <img class="img-responsive" src="http://placehold.it/600x400/13c2e8/fff/" alt="" />
+                    </div>
+                    <div class="col-sm-3 mix category-1">
+                        <img class="img-responsive" src="http://placehold.it/600x400/13c2e8/fff/" alt="" />
+                    </div>
+                    <div class="col-sm-3 mix category-2">
+                        <img class="img-responsive" src="http://placehold.it/600x400/d09106/fff/" alt="" />
+                    </div>
+                    <div class="col-sm-3 mix category-2">
+                        <img class="img-responsive" src="http://placehold.it/600x400/d09106/fff/" alt="" />
+                    </div>
+                </div>
+            <?php } ?>
+
+        </div>
+    </main>
+</section>
+
 <?php include 'assets/inc/footer.php'; ?>

@@ -106,6 +106,8 @@
         <!-- Include js plugin -->
         <script src="assets/js/owl.carousel.min.js"></script>
 
+        <!-- MixItUp Filter Gallery plugin -->
+        <script src="assets/js/jquery.mixitup.js"></script>
         <!-- Magnific Popup core JS file -->
         <script src="assets/js/jquery.magnific-popup.min.js"></script>
 

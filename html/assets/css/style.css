@@ -585,6 +585,32 @@ span.comments-count {
     color: #999;
 }
 
+#Container .mix{
+	display: none;
+}
+
+header.filter-gallery {
+    background: #ddd;
+}
+
+header.filter-gallery ul {
+    margin: 0;
+}
+
+header.filter-gallery ul li {
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+main.gallery {
+    margin: 40px auto;
+}
+
+main.gallery .row {
+    margin: 30px auto;
+}
+
+
 /*
     Responsive Queries
 */
