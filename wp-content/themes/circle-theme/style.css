@@ -46,458 +46,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-html {
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
-}
 
-body {
-	margin: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	vertical-align: baseline;
-}
-
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-
-[hidden],
-template {
-	display: none;
-}
-
-a {
-	background-color: transparent;
-}
-
-a:active,
-a:hover {
-	outline: 0;
-}
-
-abbr[title] {
-	border-bottom: 1px dotted;
-}
-
-b,
-strong {
-	font-weight: bold;
-}
-
-dfn {
-	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
-mark {
-	background: #ff0;
-	color: #000;
-}
-
-small {
-	font-size: 80%;
-}
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	top: -0.5em;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-img {
-	border: 0;
-}
-
-svg:not(:root) {
-	overflow: hidden;
-}
-
-figure {
-	margin: 1em 40px;
-}
-
-hr {
-	box-sizing: content-box;
-	height: 0;
-}
-
-pre {
-	overflow: auto;
-}
-
-code,
-kbd,
-pre,
-samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	color: inherit;
-	font: inherit;
-	margin: 0;
-}
-
-button {
-	overflow: visible;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
-}
-
-button[disabled],
-html input[disabled] {
-	cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
-input {
-	line-height: normal;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-	border: 0;
-	padding: 0;
-}
-
-textarea {
-	overflow: auto;
-}
-
-optgroup {
-	font-weight: bold;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-td,
-th {
-	padding: 0;
-}
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
-}
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
-}
-
-select {
-	border: 1px solid #ccc;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-textarea {
-	width: 100%;
-}
 
 /*--------------------------------------------------------------
 # Navigation
@@ -505,28 +67,6 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
 
 /*--------------------------------------------------------------
 ## Menus
@@ -891,4 +431,640 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*
+    Autor: Hesham Shawky.com;
+    Email: me@heshamshawky.com
+*/
+/*------------------------------------------------------------------------------
+    Genral Elements
+------------------------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+p {
+    line-height: 25px;
+}
+
+/*------------------------------------------------------------------------------
+    header section
+------------------------------------------------------------------------------*/
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.header .topnav {
+    background: url('/circle/wp-content/themes/circle-theme/assets/images/top-nav.jpg');
+    height: 100px;
+    padding: 18px 0;
+}
+
+.header .navbar-default {
+    border: 0;
+    border-radius: 0;
+    opacity: 0.75;
+}
+
+.header .navbar-default .navbar-nav>li>a {
+    color: #4a4d4f;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #0f9de0;
+    background-color: transparent;
+}
+
+.header .navbar-nav>.active:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #0f9de0;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 65%;
+}
+
+.hero {
+    height: 100vh;
+    background: url('/circle/wp-content/themes/circle-theme/assets/images/bg.jpg');
+    background-size: cover;
+    padding-top: 170px;
+}
+
+.hero .carousel {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.hero .carousel-caption {
+    position: static;
+    margin: 90px 0;
+    opacity: 1;
+}
+
+.hero .carousel-caption {
+    padding: 0 30px;
+}
+
+
+.hero .carousel-caption h1 {
+    font-size: 80px;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.hero .carousel-caption p {
+    padding: 10px 40px;
+    line-height: 25px;
+    /*border-bottom: 2px solid rgba(255, 255, 255, 0.4);*/
+}
+
+.hero .carousel-control {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.carousel-control.right {
+    left: 5%;
+}
+
+.carousel-control.left {
+    right: 5%;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background: transparent;
+}
+
+.blue {
+    padding: 20px 0;
+    background: #1e5799;
+    background: -moz-linear-gradient(left,  #1e5799 0%, #5fb9f4 60%, #2989d8 100%);
+    background: -webkit-linear-gradient(left,  #1e5799 0%,#5fb9f4 60%,#2989d8 100%);
+    background: linear-gradient(to right,  #1e5799 0%,#5fb9f4 60%,#2989d8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#2989d8',GradientType=1 );
+
+}
+
+.blue h2,
+.blue h4 {
+    color: #fff;
+    font-weight: 300;
+}
+
+.features {
+    background: url('/circle/wp-content/themes/circle-theme/assets/images/features-bg.jpg');
+
+}
+
+.fea-box {
+    color: #53575b;
+    position: relative;
+    padding: 20px 0;
+}
+
+.fea-box h3, .fea-box h4 {
+    font-weight: 300;
+}
+
+.recent {
+    background-color: #f3f3f3;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.recent h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.arrows span {
+    cursor: pointer;
+}
+
+#owl-demo .item {
+    position: relative;
+    margin: 10px;
+    box-shadow: 0 0 1px #222;
+    border: 4px solid #fff;
+}
+
+.item-links {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.item-links li a {
+    color: #999;
+    font-size: 19px;
+    background: rgb(255, 255, 255);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 47px;
+    border: 3px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px #111;
+}
+
+.item:hover .item-links {
+    opacity: 1;
+}
+
+.item-links ul {
+    margin: 10% 0;
+}
+
+.item-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fbfbfb;
+}
+
+.item-info h3 {
+    font-weight: 300;
+}
+
+.links {
+    background: url('/circle/wp-content/themes/circle-theme/assets/images/links-bg.png');
+    padding: 40px 0;
+}
+
+.links ul li {
+    line-height: 30px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #888;
+}
+
+.recent-posts {
+    padding: 40px 0;
+}
+
+.why-choose-us h2,
+.recent-posts h2 {
+    text-transform: uppercase;
+    color: #777;
+    padding: 20px 0;
+    border-bottom: 3px solid #eee;
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px auto;
+}
+
+
+.recent-posts h2:after {
+    content: "";
+    display: block;
+    border-width: 10px 10px 10px 10px;
+    border-color: #eeeeee transparent transparent;
+    border-style: solid;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: white;
+    width: 10px;
+}
+
+.arrows-posts {
+    position: absolute;
+    top: 48%;
+    right: 5%;
+}
+
+.arrows-posts span {
+    font-size: 15px;
+    font-weight: 300;
+    color: #999;
+    cursor: pointer;
+}
+#re-posts-cars {
+    overflow: hidden;
+}
+div#re-posts-cars img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    margin: 35px auto 0;
+    border: 5px solid #fff;
+    box-shadow: 0 0 1px #999;
+}
+
+
+div#re-posts-cars .item {
+    margin: 5px auto;
+}
+
+div#re-posts-cars .user {
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px solid #ddd;
+
+}
+
+.post-info {
+    margin: 5px auto;
+    padding: 0 20px;
+}
+
+.why-choose-us {
+    padding: 40px 0;
+    background: url('/circle/wp-content/themes/circle-theme/assets/images/why-bg.png');
+}
+
+.why-choose-us h4 {
+    color: #474a4c;
+    font-weight:bold;
+    font-size: 16px;
+    text-transform:uppercase;
+    margin:10px auto;
+}
+
+.why-choose-us h2 {
+    border-bottom: 3px solid #e0e0e0;
+    margin: 0 auto 60px;
+}
+
+.why-choose-us h2:after {
+    content: "";
+    display: block;
+    border-width: 10px 10px 10px 10px;
+    border-color: #e0e0e0 #e8e8e8 #e7e7e7 #eaeaea;
+    border-style: solid;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: white;
+    width: 10px;
+}
+
+.why-box {
+    margin: 15px auto;
+}
+
+
+.testimonials {
+    overflow: hidden;
+    background: #b3b7bb;
+    padding: 40px 0;
+}
+
+.testimonials h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.testimonials .carousel-indicators {
+    position: relative;
+    top: 10px
+}
+
+.testimonials .carousel-indicators .active {
+    background-color: white;
+}
+
+.testimonials h2.title .fa {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.testimonials .test-box {
+    overflow: hidden;
+    color: #222;
+    margin: 10px auto 0;
+    max-width: 600px;
+}
+
+.testimonials .testi-img img {
+    position: relative;
+    padding: 5px;
+    background: #eee;
+}
+
+.testimonials .test-box h5 {
+    color: #555;
+}
+
+.testimonials .test-box p {
+    font-weight: 300;
+}
+
+.test-box h3 {
+    font-family: 'Dancing script', sans-serif;
+}
+
+.testimonials .quata {
+    position: absolute;
+    bottom: -35px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    background: #333;
+    line-height: 70px;
+    color: #fff;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s
+}
+
+.testimonials .test-box:hover .quata {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+
+
+.footer {
+    padding: 40px 0;
+    background: #46494b;
+}
+
+.footer h4 {
+    color: #b1b6b9;
+    text-transform: uppercase;
+}
+
+.footer ul li {
+    color: #b1b6b9;
+}
+
+
+.footer .recent-post-box .date {
+    color: #909397;
+    text-transform: uppercase;
+}
+.footer .recent-post-box h5 {
+    color: #bbdbef;
+}
+
+.footer .short-desc {
+    color: #b1b6b9;
+}
+
+.footer .contact li {
+    line-height: 30px;
+    list-style: none;
+}
+
+.footer .news-letter p {
+    color: #b1b6b9;
+}
+
+.footer .social li a {
+    font-size: 20px;
+    padding: 5px;
+    color: #777;
+}
+
+.copy-right {
+    background: #3d3f40;
+    color: #b1b6b9;
+    padding: 15px 0 5px;
+}
+
+.main-wrapper {
+    margin: 20px auto;
+}
+
+.post {
+    margin: 20px auto;
+}
+
+.post-head {
+    margin: 10px 0;
+}
+
+.post-head .user-image img {
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+.post-body {
+    padding: 0 15px;
+}
+
+.post-body img {
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin: 0 0 10px;
+}
+
+.user-image {
+    position: relative;
+}
+
+span.comments-count {
+    display: inline-block;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    background: #ddd;
+    /* left: 0; */
+    right: 0;
+    /* margin: auto; */
+    top: 50%;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+    color: #1e93f7;
+}
+
+
+.sidebar .stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.sidebar .stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.sidebar .stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.widget {
+    margin: 40px auto;
+}
+
+.cat li {
+    line-height: 30px;
+}
+.cat hr {
+    margin: 5px auto;
+}
+.cat .fa {
+    font-size: 10px;
+    color: #ddd;
+    margin: 0 5px;
+}
+
+.taps .panel-heading {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.panel-default {
+    border: 0;
+}
+
+.recent-posts-side {
+    background: #eee;
+    padding: 10px;
+}
+
+.recent-posts-side hr {
+    border-color: #ddd;
+    margin: 5px auto;
+}
+
+.recent-posts-side p:first-of-type {
+    font-size: 11px;
+    color: #999;
+}
+
+#comments img {
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+#comments .comment-replay  {
+    background: #eee;
+    padding: 10px 0 0 30px;
+    list-style: none;
+}
+
+#comments .comment-body {
+    padding: 10px 0;
+}
+
+#comments .comment {
+    margin: 20px auto;
+}
+
+#leave-comment small {
+    color: #999;
+}
+
+#Container .mix{
+	display: none;
+}
+
+header.filter-gallery {
+    background: #ddd;
+}
+
+header.filter-gallery ul {
+    margin: 0;
+}
+
+header.filter-gallery ul li {
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+main.gallery {
+    margin: 40px auto;
+}
+
+main.gallery .row {
+    margin: 30px auto;
+}
+
+.contact-detial {
+    padding: 40px 0;
+}
+
+
+/*
+    Responsive Queries
+*/
+@media all and (min-width: 768px) {
+
+    .fea-box {
+        border-right: 1px solid #7f8285;
+    }
+    .fea-box:after {
+        content: "";
+        position: absolute;
+        top: 45%;
+        right: -10px;
+        border-width: 8px 0 8px 10px !important;
+        border-style: solid;
+        border-color: transparent #00f transparent #7f8285 !important;
+    }
 }
