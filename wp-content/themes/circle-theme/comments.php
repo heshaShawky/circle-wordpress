@@ -20,66 +20,71 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments">
+    <div class="comments-wrap">
+        <h3 class="text-center text-uppercase">comments (<?php comments_number(0, 1, '%'); ?>)</h3>
+        <hr style="border-width:3px;"/>
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'circle-theme' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2>
+		<?php function my_comments_theme($comment, $args, $depth) {
+            $GLOBALS['comment'] = $comment; ?>
+            <li class="" <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+				<div class="comment-body clearfix" id="comment-<?php comment_ID(); ?>">
+                    <div class="col-xs-2">
+                        <div class="user-image text-center">
+                            <?php echo get_avatar($comment,$size='48',$default='<path_to_url>' ); ?>
+                            <span>By <?php the_author(); ?></span>
+                        </div>
+                    </div>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'circle-theme' ); ?></h2>
-			<div class="nav-links">
+                    <div class="col-xs-10">
+                        <header>
+                            <span class="date"><i class="fa fa-clock-o"></i>&nbsp 25 Nov, 2012</span>&nbsp&nbsp&nbsp <span class="tags"><i class="fa fa-tags"></i>&nbsp <a href="#">Web</a>, <a href="#">News</a></span>
+                        </header>
+						<?php if ($comment->comment_approved == '0') : ?>
+			                <em><php _e('Your comment is awaiting moderation.') ?></em><br />
+			            <?php endif; ?>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'circle-theme' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'circle-theme' ) ); ?></div>
+                        <p>
+							<?php comment_text(); ?>
+						</p>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+						<div class="reply">
+							<?php comment_reply_link( $args, $comment, $post ); ?>
+						</div>
+                        <!-- <a href="#" class="btn btn-default">Reply</a>
+                        <a class="btn btn-danger" href="#">Delete</a> -->
+                    </div>
+                </div>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+        <?php } ?>
+		<?php if ( have_comments() ) : ?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'circle-theme' ); ?></h2>
-			<div class="nav-links">
+			<ul class="comments-list list-unstyled">
+				<?php
+					wp_list_comments('type=comment&callback=my_comments_theme');
+				?>
+			</ul>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'circle-theme' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'circle-theme' ) ); ?></div>
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+				<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+					<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'circle-theme' ); ?></h2>
+					<div class="nav-links">
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
-		endif; // Check for comment navigation.
+						<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'circle-theme' ) ); ?></div>
+						<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'circle-theme' ) ); ?></div>
 
-	endif; // Check for have_comments().
+					</div><!-- .nav-links -->
+				</nav><!-- #comment-nav-below -->
+			<?php endif; // Check for comment navigation. ?>
 
+		<?php endif; ?>
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		<?php // If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'circle-theme' ); ?></p>
+		<?php endif; ?>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'circle-theme' ); ?></p>
-	<?php
-	endif;
-
-	comment_form();
-	?>
-
-</div><!-- #comments -->
+        <br /><br />
+        <?php comment_form(); ?>
+    </div><!-- /.comments-wrap -->
+</div>

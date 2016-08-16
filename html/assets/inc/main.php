@@ -1,4 +1,4 @@
-<main class="main-posts">
+<main id="content" role="main" class="main-posts">
     <div class="post clearfix">
         <header class="post-head clearfix">
             <div class="col-xs-2">

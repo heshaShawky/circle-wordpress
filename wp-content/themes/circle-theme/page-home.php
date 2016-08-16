@@ -54,7 +54,9 @@ get_header();
                         <h4><?php echo get_field('feature_body'); ?></h4>
                     </div>
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile;
+            wp_reset_query();
+            ?>
         </div>
     </div>
 </section>

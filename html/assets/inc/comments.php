@@ -3,6 +3,7 @@
         <h3 class="text-center text-uppercase">comments (3)</h3>
         <hr style="border-width:3px;"/>
 
+        
         <ul class="comments-list list-unstyled">
             <li class="comment">
                 <div class="comment-body clearfix">
