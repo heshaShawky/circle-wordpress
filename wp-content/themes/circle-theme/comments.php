@@ -31,15 +31,16 @@ if ( post_password_required() ) {
 				<div class="comment-body clearfix" id="comment-<?php comment_ID(); ?>">
                     <div class="col-xs-2">
                         <div class="user-image text-center">
-                            <?php echo get_avatar($comment,$size='48',$default='<path_to_url>' ); ?>
-                            <span>By <?php the_author(); ?></span>
+							<?php echo get_avatar( get_the_author_meta( 'comment' ), 90, null, null, array('class'=>'img-responsive img-circle')); ?>
+                            <span>By <?php comment_author(); ?></span>
                         </div>
                     </div>
 
                     <div class="col-xs-10">
                         <header>
-                            <span class="date"><i class="fa fa-clock-o"></i>&nbsp 25 Nov, 2012</span>&nbsp&nbsp&nbsp <span class="tags"><i class="fa fa-tags"></i>&nbsp <a href="#">Web</a>, <a href="#">News</a></span>
+                            <span class="date"><i class="fa fa-clock-o"></i>&nbsp <?php comment_date(); ?></span>&nbsp&nbsp&nbsp <span class="tags"><i class="fa fa-tags"></i>&nbsp <?php the_category(', '); ?></span>
                         </header>
+
 						<?php if ($comment->comment_approved == '0') : ?>
 			                <em><php _e('Your comment is awaiting moderation.') ?></em><br />
 			            <?php endif; ?>
@@ -49,10 +50,9 @@ if ( post_password_required() ) {
 						</p>
 
 						<div class="reply">
-							<?php comment_reply_link( $args, $comment, $post ); ?>
+							<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+
 						</div>
-                        <!-- <a href="#" class="btn btn-default">Reply</a>
-                        <a class="btn btn-danger" href="#">Delete</a> -->
                     </div>
                 </div>
 
@@ -85,6 +85,54 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 
         <br /><br />
-        <?php comment_form(); ?>
+
+
+
+		<?php
+		$fields = array(
+
+			'author' => '<div class="form-group clearfix">
+				<div class="col-sm-6">
+					<label for="author">'. __('Name', 'domainreference') .'</label><small> (required)</small>
+					<input id="author" name="author" class="form-control" type="text"placeholder="Your Name*" required value="'. esc_attr( $commenter['comment_author'] ) .'" /></div>',
+
+			'email'	=> '<div class="col-sm-6">
+				<label for="email">'.__( 'Email', 'domainreference' ).'</label><small> (required)</small>
+				<input id="email" name="email" type="text" class="form-control"placeholder="Your Email*" value="'. esc_attr(  $commenter['comment_author_email'] ) .'" />
+			</div></div>',
+
+			'url' =>
+					'<div class="form-group clearfix"><div class="col-sm-12"><label for="url">' . __( 'Website', 'domainreference' ) . '</label><small> (optional)</small>' .
+					'<input class="form-control" placeholder="Your website" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+					'" /></div></div>',
+
+
+			'comment_field' => '<div class="form-group clearfix"><div class="col-sm-12"><label for="comment">' . _x( 'Your Comment', 'noun' ) . '</label><small> (required)</small><textarea id="comment" class="form-control" placeholder="Your Comment*" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>',
+
+
+
+
+
+		);
+
+		$args = array(
+			'title_reply_before'	=> '<h3 class="text-center text-uppercase">',
+			'title_reply'	=> 'leave a comment',
+			'title_reply_after'		=> '</h3>',
+			'comment_notes_before'	=> '<hr />',
+			'comment_field' => false,
+
+			'submit_field'	=>  '<div class="form-group clearfix"><div class="col-sm-12"> %1$s %2$s</a><a class="btn btn-default text-uppercase clear">clear</a></div>',
+			'class_submit'	=> 'btn btn-default text-uppercase',
+			'label_submit'	=> 'sent',
+			'fields' => apply_filters('comment_from-default_fields', $fields)
+		);
+
+		if ( is_user_logged_in() ) {
+			$args['comment_field'] = '<div class="form-group clearfix"><div class="col-sm-12"><label for="comment">' . _x( 'Your Comment', 'noun' ) . '</label><small> (required)</small><textarea id="comment" class="form-control" placeholder="Your Comment*" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>';
+		}
+
+		?>
+		<?php comment_form( $args ) ?>
     </div><!-- /.comments-wrap -->
 </div>

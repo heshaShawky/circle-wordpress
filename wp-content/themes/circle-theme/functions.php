@@ -92,7 +92,7 @@ function circle_theme_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'circle-theme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
+		'before_title'  => '<h4 class="widget-title text-uppercase">',
 		'after_title'   => '</h4>',
 	) );
 }
@@ -139,8 +139,31 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
+require get_template_directory() . '/widget.php';
+
 function new_excerpt_more($more) {
        global $post;
 	return '<br /><br /><a class="btn btn-default" href="'. get_permalink($post->ID) . '"> Read more</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+            $title = single_cat_title( '', false );
+
+        } elseif ( is_tag() ) {
+
+            $title = single_tag_title( '', false );
+
+        } elseif ( is_author() ) {
+
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+        }
+
+    return $title;
+
+});

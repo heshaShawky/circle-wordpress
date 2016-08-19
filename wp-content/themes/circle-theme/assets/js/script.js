@@ -77,6 +77,9 @@ $(document).ready(function () {
         });
     }
 
+    $('.clear').click(function () {
+		$('form input[type="text"],form textarea').val('');
+	});
 
 
 });

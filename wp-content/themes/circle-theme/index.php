@@ -20,7 +20,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
-	
+
 	<section class="main-wrapper clearfix">
 		<div class="container">
 			<div class="col-md-8">

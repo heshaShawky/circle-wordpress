@@ -8,7 +8,8 @@
  */
 
 get_header(); ?>
-	<section class="hero" style="height: auto; color:#fff; ">
+
+	<section class="hero" style="height: auto; color:#fff; background: url(<?php if(has_post_thumbnail()): the_post_thumbnail_url(); else: endif;?>)">
 		<div class="container">
 			<div class="raw">
 				<h2 style="font-weight: bold;">BLOG</h2>
@@ -24,7 +25,7 @@ get_header(); ?>
 
 						get_template_part( 'template-parts/content-page', get_post_format() );
 
-						the_post_navigation();
+						// the_post_navigation();
 
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :
