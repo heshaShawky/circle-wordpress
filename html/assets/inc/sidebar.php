@@ -72,15 +72,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="tab2default">
-                            <div class="recent-posts-side">
-                                <p class="date text-uppercase">dec 15, 2012  |  <span class="user">By <a href="#">admin</a></span></p>
-                                <h5><a href="#">Morbi a libero eget erat auctor Sus</a> </h5>
-                                <p class="short-desc">
-                                    vitae id tortor suspendisse.
-                                    Vestibulum eu ligula lorem ...
-                                </p>
-                                <hr />
-                            </div>
+
 
                             <div class="recent-posts-side">
                                 <p class="date text-uppercase">dec 15, 2012  |  <span class="user">By <a href="#">admin</a></span></p>
