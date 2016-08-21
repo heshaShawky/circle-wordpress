@@ -167,3 +167,18 @@ add_filter( 'get_the_archive_title', function ($title) {
     return $title;
 
 });
+
+// WP Menu Categories
+add_action( 'init', 'custom_cats', 0 );
+
+function custom_cats() {
+    register_taxonomy(
+		'categories',
+		'projects',
+		array(
+			'hierarchical' => true,
+			'label' => 'Categories',
+			'query_var' => true,
+			'rewrite' => true )
+		);
+}
