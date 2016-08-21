@@ -18,10 +18,12 @@ get_header(); ?>
             <div class="container-fluid">
                 <ul class="list-inline list-unstyled">
                     <li class="selected filter" data-filter="all">All</li>
-                    <?php $cats = get_categories(array('taxonomy'=>'categories','hide_empty'=> 0))?>
+                    <?php $cats = get_categories(array('taxonomy'=>'categories','hide_empty'=> 0, 'orderby'=>'ID', 'order' => 'ASC'))?>
                     <?php foreach ($cats as $cat): ?>
-                        <?php $cat_name = $cat->name; ?>
-                        <li class="filter" data-filter=.<?php echo str_replace(' ', '-', $cat_name) ?>><?php echo $cat_name; ?></li>
+                        <?php $cat_name = $cat->name;
+                        $cat_slug = $cat->slug;
+                        ?>
+                        <li class="filter" data-filter=.<?php echo $cat_slug ?>><?php echo $cat_name; ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -29,23 +31,28 @@ get_header(); ?>
 
         <main class="gallery">
             <div class="container" id="Container">
-                <div class="row">
-
                     <?php
                     $loops = new WP_Query(array(
                         'post_type' => 'projects',
                         'orderby'   => 'post_id',
                         'order'     => 'DESC'
                     ));
-
+                    $count = 1;
                     while( $loops->have_posts() ): $loops->the_post() ?>
-                        <div class="col-sm-3 mix <?php echo str_replace(' ', '-', $cat_name) ?> ">
-                            <?php if (has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail('full', array('class'=> 'img-responsive')); ?>
-                            <?php endif; ?>
+                        <?php if ($count%4 == 1): ?>
+                            <div class="row">
+                        <?php endif; ?>
+                        <div class="col-sm-3 mix <?php $terms = get_the_terms($post->ID, 'categories' ); foreach ($terms as $term): echo $post_cat_slug = $term->slug . ' '; endforeach; ?>">
+                            <?php if (has_post_thumbnail()):
+                                the_post_thumbnail('full', array('class'=> 'img-responsive'));
+                            endif; ?>
                         </div>
+                        <?php if ($count%4 == 0): ?>
+                            </div>
+                        <?php endif; $count++ ?>
+
                     <?php endwhile; wp_reset_query(); ?>
-                </div>
+                    <?php if ($count%4 != 1) { echo '</div>'; } ?>
 
             </div>
 
