@@ -8,7 +8,19 @@ $(document).ready(function () {
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3]
 
-  });
+    });
+
+    // OWL Carousel
+    $("#owl-pro").owlCarousel({
+
+        autoPlay: false, //Set AutoPlay to 3 seconds
+        items : 1,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+
+    });
+
+
     var owl = $("#owl-demo"),
     owl2 = $("#re-posts-cars");
   // Custom Navigation Events

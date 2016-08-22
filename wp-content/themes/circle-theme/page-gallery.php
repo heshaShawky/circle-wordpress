@@ -43,9 +43,15 @@ get_header(); ?>
                             <div class="row">
                         <?php endif; ?>
                         <div class="col-sm-3 mix <?php $terms = get_the_terms($post->ID, 'categories' ); foreach ($terms as $term): echo $post_cat_slug = $term->slug . ' '; endforeach; ?>">
-                            <?php if (has_post_thumbnail()):
-                                the_post_thumbnail('full', array('class'=> 'img-responsive'));
-                            endif; ?>
+
+                            <?php
+                            if (has_post_thumbnail()):
+                                echo "<a href='".get_permalink()."'>";
+                                    the_post_thumbnail('full', array('class'=> 'img-responsive'));
+                                echo "</a>";
+                            endif;
+                            ?>
+
                         </div>
                         <?php if ($count%4 == 0): ?>
                             </div>
