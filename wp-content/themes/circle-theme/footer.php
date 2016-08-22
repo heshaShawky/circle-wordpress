@@ -24,25 +24,21 @@
                         <div class="footer-recent-posts">
                             <h4>Recent posts</h4>
                             <br />
-                            <div class="recent-post-box">
-                                <p class="date ">dec 15, 2012  |  <span class="user">By admin</span></p>
-                                <h5>Morbi a libero eget erat auctor Sus </h5>
-                                <p class="short-desc">
-                                    vitae id tortor suspendisse.
-                                    Vestibulum eu ligula lorem ...
-                                </p>
-                            </div>
+                            <?php $recent_posts = wp_get_recent_posts(array('numberposts'=>'2')); ?>
+                            <?php foreach ($recent_posts as $recent): ?>
+                                <div class="recent-post-box">
+                                    <p class="date "><?php echo $recent['post_date']; ?>  |
+                                        <span class="user">By <?php echo get_userdata(intval($recent['post_author']))->user_login; ?></span>
+                                    </p>
+                                    <h5><?php echo $recent['post_title'] ?> </h5>
+                                    <p class="short-desc">
+                                        <?php echo excerpt(12, $recent['post_content']) ?>
+                                    </p>
+                                </div>
 
-                            <hr />
+                                <hr />
+                            <?php endforeach; ?>
 
-                            <div class="recent-post-box">
-                                <p class="date ">dec 15, 2012  |  <span class="user">By admin</span></p>
-                                <h5>Morbi a libero eget erat auctor Sus </h5>
-                                <p class="short-desc">
-                                    vitae id tortor suspendisse.
-                                    Vestibulum eu ligula lorem ...
-                                </p>
-                            </div>
                         </div>
                     </div>
 
@@ -68,7 +64,7 @@
                             </p>
                             <form class="" action="index.html" method="post">
                                 <div class="form-group clearfix">
-                                    <div class="col-xs-8">
+                                    <div class="col-xs-8" style="padding: 0">
                                         <input class="form-control" type="email" name="email" value="">
                                     </div>
                                     <div class="col-sm-4">

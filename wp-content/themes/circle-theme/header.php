@@ -59,8 +59,18 @@
         <nav class="topnav">
             <div class="container clearfix">
                 <div class="col-sm-8">
-                    <a href="#"><img class="logo img-responsive" src="<?php bloginfo('stylesheet_directory')?>/assets/images/logo.png" alt="logo" /></a>
+                    <a href="#"><img class="logo img-responsive" src="<?php echo bloginfo('stylesheet_directory')?>/assets/images/logo.png" alt="logo" /></a>
                 </div>
+				<div class="col-sm-4">
+					<div class="social-header">
+						<ul class="list-inline">
+							<li><a href="#"><span class="fa fa-thumbs-o-up"></span></a></li>
+							<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+							<li><a href="#"><span class="fa fa-skype"></span></a></li>
+							<li><a href="#"><span class="fa fa-youtube"></span></a></li>
+						</ul>
+					</div>
+				</div>
             </div>
         </nav>
 

@@ -1,245 +1,81 @@
 <?php
 /*
-    Template Name: Home Page
+    Template Name: Contact Page
+
 */
-get_header();
-?>
 
-<!--===============================================================
-    Start the Hero Section
-=================================================================-->
-<section class="hero">
-    <div class="container">
-        <div class="carousel-caption">
-            <h1>
-                <strong>CLEAN</strong>
-                <br />& PERFECT
-            </h1>
-            <p class="text-center">
-                Morbi a libero eget erat auctor cursus vitae id tortor.<br /> Suspendisse rhoncus.
-            </p>
+get_header(); ?>
+
+<style media="screen">
+    .header {
+        z-index: 999
+    }
+
+    .googleMap {
+        position: relative;
+        z-index: 0;
+    }
+</style>
+<section class="hero" style="height: auto; color:#fff; background: none; padding: 0 ">
+    <div class="head-title" style="position: absolute; left: 0; right: 0;z-index: 999; background: rgba(0, 0, 0, 0.7);top:152px;">
+        <div class="container">
+            <h2 class="text-uppercase">Contacts</h2>
         </div>
+
     </div>
+    <div class="googleMap" id="googleMap" style="width: 100%; height: 100vh"></div>
 </section>
 
-<!--===============================================================
-    Start the Blue Section
-=================================================================-->
-<section class="blue">
-    <div class="container">
-        <h2>A fully responsive theme with clean & pixel perfect design. </h2>
-        <h4>Suspendisse tristique ante sit amet sem pulvinar posuere. </h4>
-    </div>
-</section>
-
-<!--===============================================================
-    Start the Features Section
-=================================================================-->
-<section class="features">
+<section class="contact-detial">
     <div class="container">
         <div class="row">
-            <?php $loop = new WP_Query(array(
-                'post_type' => 'features',
-                'orderby'   => 'post_id',
-                'order'     => 'ASC'
-            )); ?>
-            <?php while ($loop->have_posts()): $loop->the_post(); ?>
-                <div class="col-sm-4">
-                    <div class="fea-box text-center">
-                        <?php if (!empty(get_field('feature_image'))): ?>
-                            <img class="img-responsive" src="<?php echo get_field('feature_image')['url']?>" style="margin: auto" alt="<?php echo get_field('feature_image')['alt']?>"/>
-                        <?php endif; ?>
-
-                        <h3><?php the_title() ?></h3>
-                        <h4><?php echo get_field('feature_body'); ?></h4>
-                    </div>
-                </div>
-            <?php endwhile;
-            wp_reset_query();
-            ?>
-        </div>
-    </div>
-</section>
-
-<!--===============================================================
-    Start the recent Section
-=================================================================-->
-<section class="recent">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <h3>recent works</h3><br />
-                <p>
-                    Suspendisse rhoncus facili iscing. Vestibulum eu ligula lorem mus orci sem.
-                </p>
-                <div class="arrows">
-                    <span id="move-left" class="glyphicon glyphicon-chevron-left"></span>
-                    <span id="move-right" class="glyphicon glyphicon-chevron-right"></span>
-                </div>
-            </div>
-
-            <div class="col-sm-9">
-                <div id="owl-demo" style="overflow:hidden">
-                    <?php
-                    $loops = new WP_Query(array('post_type'=>'projects', 'orderby'=>'rand'));
-                    while( $loops->have_posts() ): $loops->the_post(); ?>
-                    <div class="item">
-                        <?php if ( has_post_thumbnail() ): ?>
-                            <?php the_post_thumbnail('full', array('class'=>'img-responsive')); ?>
-                        <?php endif; ?>
-
-                        <div class="item-links">
-                            <ul class="list-inline">
-                                <li class="zoom-gallery">
-                                    <a class="image-popup-no-margins" href="<?php the_post_thumbnail_url(); ?>">
-                                        <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <?php
-                                    echo "<a href='".get_permalink()."'>";
-                                    echo '<i class="fa fa-link" aria-hidden="true"></i>';
-                                    echo "</a>";
-                                    ?>
-
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="item-info">
-                            <h5 class="text-capitalize"><?php the_title(); ?></h5>
-
-                        </div>
-                    </div>
-
-                    <?php endwhile; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--===============================================================
-    Start the Links Section
-=================================================================-->
-<section class="links">
-    <div class="container">
-        <div class="row">
-            <!-- First col -->
             <div class="col-sm-4">
-                <div class="col-sm-3">
-                    <div class="list-image">
-                        <img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/links-icons/1.png" />
-                    </div>
-                </div>
+                <div class="deta">
+                    <h4 class="text-uppercase">contact details</h4><br />
+                    <ul class="list-unstyled">
 
-                <div class="col-sm-9">
-                    <h4 class="title">All in one solution</h4>
-                    <ul>
-                        <li><a href="#">Content management systems</a></li>
-                        <li><a href="#">Virtual shops and ecommerce</a></li>
-                        <li><a href="#">Presentation websites</a></li>
-                        <li><a href="#">Online catalogues</a></li>
-                        <li><a href="#">Portal systems</a></li>
-                        <li><a href="#">& any other dynamic website</a></li>
+                        <li>phoenix Inc.</li>
+                        <li>PO Box 21177</li>
+                        <li>Little Lonsdale St, Melbourne</li>
+                        <li>Victoria 8011 Australia</li><br />
+                        <li>Phone: (415) 124-5678</li>
+                        <li>Fax: (415) 124-5678</li><br />
+                        <li>support@yourname.com</li>
                     </ul>
                 </div>
             </div>
-
-            <!-- First col -->
-            <div class="col-sm-4">
-                <div class="col-sm-3">
-                    <div class="list-image">
-                        <img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/links-icons/2.png" />
-                    </div>
-                </div>
-
-                <div class="col-sm-9">
-                    <h4 class="title">passion for interaction</h4>
-                    <ul>
-                        <li><a href="#">Content management systems</a></li>
-                        <li><a href="#">Virtual shops and ecommerce</a></li>
-                        <li><a href="#">Presentation websites</a></li>
-                        <li><a href="#">Online catalogues</a></li>
-                        <li><a href="#">Portal systems</a></li>
-                        <li><a href="#">& any other dynamic website</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- First col -->
-            <div class="col-sm-4">
-                <div class="col-sm-3">
-                    <div class="list-image">
-                        <img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/links-icons/3.png" />
-                    </div>
-                </div>
-
-                <div class="col-sm-9">
-                    <h4 class="title">online help center</h4>
-                    <ul>
-                        <li><a href="#">Content management systems</a></li>
-                        <li><a href="#">Virtual shops and ecommerce</a></li>
-                        <li><a href="#">Presentation websites</a></li>
-                        <li><a href="#">Online catalogues</a></li>
-                        <li><a href="#">Portal systems</a></li>
-                        <li><a href="#">& any other dynamic website</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> <!-- /.row -->
-    </div>  <!-- /.container -->
-</section>
-
-<!--===============================================================
-    Start the recent-posts Section
-=================================================================-->
-<section class="recent-posts">
-    <div class="container">
-        <div class="row">
-            <h2 class="text-center" style="font-weight:300">
-                RECENT POSTS
-                <div class="arrows-posts">
-                    <span id="move-left-post" class="glyphicon glyphicon-chevron-left"></span>
-                    <span id="move-right-post" class="glyphicon glyphicon-chevron-right"></span>
-                </div>
-            </h2>
-            <div id="re-posts-cars">
-                <?php $loop = new WP_Query(array(
-                    'post_type' => 'post',
-                    'orderby'   => 'post_id',
-                    'order'     => 'ASC'
-                )); ?>
-                <?php while($loop->have_posts()): $loop->the_post() ?>
-                    <div class="item">
-                        <a href="<?php get_permalink()?>">
-                            <?php if (has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail('full', array('class'=>'img-responsive')) ?>
-                            <?php endif; ?>
-
-                        </a>
-
-                        <div class="post-info clearfix">
-                            <div class="col-xs-4 text-center">
-                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 90, null, null, array('class'=>'img-responsive img-circle')); ?>
-                                By <a href="#"><?php the_author() ?></a>
-                            </div>
-                            <div class="col-xs-8" style="padding: 0">
-                                <?php the_title( '<h5><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' ); ?>
-                            </div>
+            <div class="col-sm-8">
+                <form class="clearfix">
+                    <div class="form-group clearfix">
+                        <div class="col-sm-6">
+                            <label for="name">Name <small>(requierd)</small></label>
+                            <input class="form-control" type="text" placeholder="Your name*">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="email">Email <small>(requierd)</small></label>
+                            <input class="form-control" type="email" placeholder="Your email*">
                         </div>
                     </div>
-                <?php endwhile; ?>
+
+                    <div class="form-group clearfix">
+                        <div class="col-sm-12">
+                            <label for="message">Your Message <small>(requierd)</small></label>
+                            <textarea class="form-control" rows="8" cols="40" placeholder="Your Message*"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-default text-uppercase" type="submit">sent</button>
+                            <a class="btn btn-default text-uppercase" onclick="$('form input,form textarea').val('');">clear</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
-
-<!--===============================================================
-    Start the why-choose-us Section
-=================================================================-->
 <section class="why-choose-us">
     <div class="container">
         <h2>WHY CHOOSE US</h2>
@@ -393,7 +229,6 @@ get_header();
     </div>
 </section>
 
-<!-- Testimonials Start -->
 <section class="testimonials padding-sections" id="testimonials">
     <!-- Section title -->
     <h2 class="text-center">
@@ -481,6 +316,7 @@ get_header();
     </div><!-- Testi Container End -->
 </section>
 <!-- Testimonials End -->
+
 
 
 <?php get_footer(); ?>
